@@ -44,7 +44,19 @@ function encontrarMinMoedas(moedas: number[], quantias: number[]): string[] {
 }
 
 // Exemplo de uso:
-const moedas = [8, 1, 5, 11]; // Valores das moedas
-const quantias = [13, 20, 51, 19, 98, 42]; // Quantias a serem trocadas
+const moedas: number[] = []; // Valores das moedas
+const quantias: number[] = []; // Quantias a serem trocadas
+while(true) {
+  const moeda = parseInt(prompt("Digite o valor da moeda: (digite 0 para finalizar)")!);
+  if (moeda === 0) break;
+  moedas.push(moeda);
+}
+
+while(true) {
+  const quantia = parseInt(prompt("Digite a quantia a ser trocada: (digite 0 para finalizar)")!);
+  if (quantia === 0) break;
+  quantias.push(quantia);
+}
+
 const respostas = encontrarMinMoedas(moedas, quantias);
 console.log(respostas.join("\n"));
